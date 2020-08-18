@@ -1,0 +1,54 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Modificar</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        <div class="card-body">
+            <form [formGroup]="ModificarForm" (ngSubmit)="modificar()">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" formControlName="nombre" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                            <div *ngIf="f.nombre.errors.required ">nombre es requerido</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" formControlName="apellido" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.apellido.errors }" />
+                        <div *ngIf="submitted && f.apellido.errors" class="invalid-feedback">
+                            <div *ngIf="f.apellido.errors.required  ">apellido es requerido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="dni">DNI:</label>
+                    <input type="number" formControlName="dni" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.dni.errors }" />
+                    <div *ngIf="submitted && f.dni.errors" class="invalid-feedback">
+                        <div *ngIf="f.dni.errors.required   ">dni es requerido</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="telefono">Telefono:</label>
+                    <input type="number" formControlName="telefono" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+                    <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                        <div *ngIf="f.telefono.errors.required ">telefono es requerido</div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Modificar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </mat-card-content>
+</mat-card>

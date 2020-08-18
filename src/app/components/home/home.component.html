@@ -1,0 +1,21 @@
+ <mat-toolbar>
+    <img id="img" src="./assets/LogoGestambo.jpg">
+  </mat-toolbar>
+  <mat-card class="example-card">
+  <ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
+    <li ngbNavItem [ngbNavItem]="1">
+      <a [routerLink]="['/novedades']" [routerLinkActive]="['is-active']" ngbNavLink>Inicio</a>
+      
+    </li>
+    <li ngbNavItem [ngbNavItem]="2">
+      <a [routerLink]="['/usuario']" ngbNavLink>Modificar</a>
+    </li>
+  
+    <li ngbNavItem  class="ml-auto">     
+      <a ngbNavLink  (click)="salir()" >
+      <mat-icon aria-hidden="false" aria-label="Example home icon">highlight_off</mat-icon>SALIR</a>    
+    </li>
+  </ul>  
+  <div [ngbNavOutlet]="nav"></div>
+ </mat-card>
+  <router-outlet></router-outlet>
