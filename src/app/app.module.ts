@@ -16,8 +16,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { NovedadesComponent } from './components/novedades/novedades.component';
+import { AgregarUsuarioComponent } from './components/agregar-usuario/agregar-usuario.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, UsuarioComponent, NovedadesComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, HomeComponent, UsuarioComponent, NovedadesComponent, AgregarUsuarioComponent],
   imports: [BrowserModule, 
              ReactiveFormsModule,
              MatMenuModule,
@@ -29,6 +31,7 @@ import { NovedadesComponent } from './components/novedades/novedades.component';
             FormsModule,
             HttpClientModule,
             NgbModule,
+            MatTableModule,
             BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]

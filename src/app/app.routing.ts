@@ -9,7 +9,9 @@ import { RegisterComponent } from "./components/register/register.component";
  import { NovedadesComponent } from "./components/novedades/novedades.component";
  /* Usuario */
  import { UsuarioComponent } from "./components/usuario/usuario.component";
-const appRoutes = [  
+ import { AgregarUsuarioComponent } from "./components/agregar-usuario/agregar-usuario.component";
+
+ const appRoutes = [  
     {
       path : '' ,
       component: HomeComponent,
@@ -21,6 +23,11 @@ const appRoutes = [
                      { path: "novedades",
                      component: NovedadesComponent,                 
                      },    
+                     {
+                      path: "agregarUsuario", 
+                      component: AgregarUsuarioComponent, 
+                                            
+                    },
         
                   ]
     },
@@ -34,6 +41,8 @@ const appRoutes = [
       component: RegisterComponent, 
       
     },
+    
+
   { path: '**', redirectTo: "novedades" },
 
 ];
